@@ -50,7 +50,7 @@ public class TimeSheet {
             if (numeroEmploye < 1000) { // Employé de l'administration
                 System.out.println();
             } else { // Employé normal
-                
+                System.out.println();
             }
             
         } catch (Exception e) {
