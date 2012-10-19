@@ -48,7 +48,7 @@ public class TimeSheet {
                                 "heuresTeletravail = " + heuresTeletravail);
             
             if (numeroEmploye < 1000) { // Employé de l'administration
-                
+                System.out.println();
             } else { // Employé normal
                 
             }
