@@ -30,24 +30,31 @@ public class main {
         JSONArray result = new JSONArray();
         
         if (timeSheet.getNumeroEmploye() < 1000) { // Employé de l'administration
-            if (timeSheet.getHeuresBureau() < 36*60)
+            if (timeSheet.getHeuresBureau() < 36*60) {
                 result.add("L'employé n'a pas travaillé le nombre d'heures minimal.");
-            if (timeSheet.getHeuresBureau() > 43*60)
+            }
+            if (timeSheet.getHeuresBureau() > 43*60) {
                 result.add("L'employé a dépassé le nombre d'heures maximal.");
-            if (timeSheet.getHeuresTeletravail() > 10*60)
+            }
+            if (timeSheet.getHeuresTeletravail() > 10*60) {
                 result.add("L'employé a dépassé le nombre d'heures de télétravail permis.");
+            }
             for (int i = 0; i < timeSheet.getHeuresJours().size()-2; ++i){
-                if (timeSheet.getHeuresJours().get(i) < 4*60)
-                    result.add("L'employé n'a pas travaillé le nombre d'heures minimal le jour" + i+1 + ".");
+                if (timeSheet.getHeuresJours().get(i) < 4*60) {
+                    result.add("L'employé n'a pas travaillé le nombre d'heures minimal le Jour" + i+1 + ".");
+                }
             }
         } else { // Employé normal
-            if (timeSheet.getHeuresBureau() < 38*60)
+            if (timeSheet.getHeuresBureau() < 38*60) {
                 result.add("L'employé n'a pas travaillé le nombre d'heures minimal.");
-            if (timeSheet.getHeuresBureau() > 43*60)
+            }
+            if (timeSheet.getHeuresBureau() > 43*60) {
                 result.add("L'employé a dépassé le nombre d'heures maximal.");
+            }
             for (int i = 0; i < timeSheet.getHeuresJours().size()-2; ++i){
-                if (timeSheet.getHeuresJours().get(i) < 6*60)
-                    result.add("L'employé n'a pas travaillé le nombre d'heures minimal le jour" + (i+1) + ".");
+                if (timeSheet.getHeuresJours().get(i) < 6*60) {
+                    result.add("L'employé n'a pas travaillé le nombre d'heures minimal le Jour" + (i+1) + ".");
+                }
             }    
         }
         

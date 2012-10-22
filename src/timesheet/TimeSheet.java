@@ -18,19 +18,19 @@ public class TimeSheet {
         String input = FileReader.loadFileIntoString(filePath);
         JSONObject timeSheet = JSONObject.fromObject(input);
             
-        this.numeroEmploye = timeSheet.getInt("numero_employe");
-        this.listeJours.add(timeSheet.getJSONArray("jour1"));
-        this.listeJours.add(timeSheet.getJSONArray("jour2"));
-        this.listeJours.add(timeSheet.getJSONArray("jour3"));
-        this.listeJours.add(timeSheet.getJSONArray("jour4"));
-        this.listeJours.add(timeSheet.getJSONArray("jour5"));
-        this.listeJours.add(timeSheet.getJSONArray("weekend1"));
-        this.listeJours.add(timeSheet.getJSONArray("weekend2"));
+        numeroEmploye = timeSheet.getInt("numero_employe");
+        listeJours.add(timeSheet.getJSONArray("jour1"));
+        listeJours.add(timeSheet.getJSONArray("jour2"));
+        listeJours.add(timeSheet.getJSONArray("jour3"));
+        listeJours.add(timeSheet.getJSONArray("jour4"));
+        listeJours.add(timeSheet.getJSONArray("jour5"));
+        listeJours.add(timeSheet.getJSONArray("weekend1"));
+        listeJours.add(timeSheet.getJSONArray("weekend2"));
         calculerHeures();
         
     }
 
-    private static void calculerHeures() {
+    private void calculerHeures() {
         
         int heuresProjects;
         for (int i = 0; i < listeJours.size(); ++i){
@@ -52,43 +52,43 @@ public class TimeSheet {
         
     }
 
-    public static int getNumeroEmploye() {
+    public int getNumeroEmploye() {
         return numeroEmploye;
     }
 
-    public static void setNumeroEmploye(int numeroEmploye) {
+    public void setNumeroEmploye(int numeroEmploye) {
         TimeSheet.numeroEmploye = numeroEmploye;
     }
 
-    public static ArrayList<JSONArray> getListeJours() {
+    public ArrayList<JSONArray> getListeJours() {
         return listeJours;
     }
 
-    public static void setListeJours(ArrayList<JSONArray> listeJours) {
+    public void setListeJours(ArrayList<JSONArray> listeJours) {
         TimeSheet.listeJours = listeJours;
     }
 
-    public static ArrayList<Integer> getHeuresJours() {
+    public ArrayList<Integer> getHeuresJours() {
         return heuresJours;
     }
 
-    public static void setHeuresJours(ArrayList<Integer> heuresJours) {
+    public void setHeuresJours(ArrayList<Integer> heuresJours) {
         TimeSheet.heuresJours = heuresJours;
     }
 
-    public static int getHeuresBureau() {
+    public int getHeuresBureau() {
         return heuresBureau;
     }
 
-    public static void setHeuresBureau(int heuresBureau) {
+    public void setHeuresBureau(int heuresBureau) {
         TimeSheet.heuresBureau = heuresBureau;
     }
 
-    public static int getHeuresTeletravail() {
+    public int getHeuresTeletravail() {
         return heuresTeletravail;
     }
 
-    public static void setHeuresTeletravail(int heuresTeletravail) {
+    public void setHeuresTeletravail(int heuresTeletravail) {
         TimeSheet.heuresTeletravail = heuresTeletravail;
     }
     

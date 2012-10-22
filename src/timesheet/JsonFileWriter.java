@@ -10,12 +10,13 @@ public class JsonFileWriter {
     public static void writeJsonFile(String filePath, JSONArray contents) throws FileNotFoundException, IOException {
         
         File file = new File(filePath);
-        if (!file.exists())
+        if (!file.exists()) {
             file.createNewFile();
-        FileWriter writer = new FileWriter(file);
-        writer.write(contents.toString(4));
-        writer.flush();
-        writer.close();
+        }
+        try (FileWriter writer = new FileWriter(file)) {
+            writer.write(contents.toString(4));
+            writer.flush();
+        }
         
     }
 }
