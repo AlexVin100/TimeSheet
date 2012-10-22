@@ -39,11 +39,11 @@ public class TimeSheet {
                 heuresProjects = 0;
                 for (int j = 0; j < jourI.size(); ++j){
                     JSONObject projetJ = jourI.getJSONObject(j);
-                    heuresProjects += projetJ.getInt("minutes");
                     if (projetJ.getInt("projet") > 900){
                         heuresTeletravail += projetJ.getInt("minutes");
                     } else {
                         heuresBureau += projetJ.getInt("minutes");
+                        heuresProjects += projetJ.getInt("minutes");
                     }
                 }
                 heuresJours.add(heuresProjects);
