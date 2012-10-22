@@ -41,7 +41,7 @@ public class main {
             }
             for (int i = 0; i < timeSheet.getHeuresJours().size()-2; ++i){
                 if (timeSheet.getHeuresJours().get(i) < 4*60) {
-                    result.add("L'employé n'a pas travaillé le nombre d'heures minimal le Jour" + i+1 + ".");
+                    result.add("L'employé n'a pas travaillé le nombre d'heures minimal le Jour" + (i+1) + ".");
                 }
             }
         } else { // Employé normal
