@@ -13,8 +13,8 @@ public class main {
         try{
             TimeSheet timeSheet = new TimeSheet("json/" + args[3]);
             
-            System.out.println("heuresSemaine = " + timeSheet.getHeuresBureau() + "\n" +
-                                "heuresTeletravail = " + timeSheet.getHeuresTeletravail());
+            System.out.println("heuresSemaine = " + (timeSheet.getHeuresBureau()/60) + "\n" +
+                                "heuresTeletravail = " + (timeSheet.getHeuresTeletravail()/60));
             System.out.println(timeSheet.getHeuresJours());
             
             JsonFileWriter.writeJsonFile("json/" + args[4], verifierRegles(timeSheet));
